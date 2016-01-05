@@ -37,6 +37,6 @@
 
 #define  xy_getSuperView(superView)      UIView *superView = self.superview;
 
-#define xy_lazyValue(s)     BOOL finshesd = objc_getAssociatedObject(self, @"finshesd");if (!finshesd) {objc_setAssociatedObject(self, @"finshesd", @1, OBJC_ASSOCIATION_ASSIGN);xy_addToSuperView(superView) s }else{xy_getSuperView(superView) s }
+#define xy_lazyValue(s)     BOOL finshesd = (BOOL)objc_getAssociatedObject(self, @"finshesd");if (!finshesd) {objc_setAssociatedObject(self, @"finshesd", @1, OBJC_ASSOCIATION_ASSIGN);xy_addToSuperView(superView) s }else{xy_getSuperView(superView) s }
 
 #endif /* XyDawnLayoutHeader_h */

@@ -33,9 +33,9 @@
     
     NSLayoutConstraint *xy_left = [NSLayoutConstraint constraintWithItem:view attribute:(NSLayoutAttributeLeft) relatedBy:(related) toItem:view.superview attribute:(NSLayoutAttributeLeft) multiplier:1.0 constant:insets.left];
     
-    NSLayoutConstraint *xy_right = [NSLayoutConstraint constraintWithItem:view attribute:(NSLayoutAttributeRight) relatedBy:(related) toItem:view.superview attribute:(NSLayoutAttributeRight) multiplier:1.0 constant:insets.right];
+    NSLayoutConstraint *xy_right = [NSLayoutConstraint constraintWithItem:view attribute:(NSLayoutAttributeRight) relatedBy:(related) toItem:view.superview attribute:(NSLayoutAttributeRight) multiplier:1.0 constant:-insets.right];
     
-    NSLayoutConstraint *xy_bottom = [NSLayoutConstraint constraintWithItem:view attribute:(NSLayoutAttributeBottom) relatedBy:(related) toItem:view.superview attribute:(NSLayoutAttributeBottom) multiplier:1.0 constant:insets.bottom];
+    NSLayoutConstraint *xy_bottom = [NSLayoutConstraint constraintWithItem:view attribute:(NSLayoutAttributeBottom) relatedBy:(related) toItem:view.superview attribute:(NSLayoutAttributeBottom) multiplier:1.0 constant:-insets.bottom];
     
     layoutArr = @[xy_top,xy_left,xy_right,xy_bottom];
     
@@ -91,6 +91,10 @@
 +(NSArray *)xy_setConstantWith:(CGFloat)constant withAttribute:(NSLayoutAttribute)attribute toSuperViewWith:(UIView *)view{
     xy_autolayoutArr(layoutArr)
     
+     if ( attribute == NSLayoutAttributeRight||attribute ==NSLayoutAttributeBottom) {
+        constant = -constant;
+    }
+    
     NSLayoutConstraint *xy_attribute = [NSLayoutConstraint addToSuperViewWithView:view WithAttribute:attribute andConstant:constant];
     
     layoutArr = @[xy_attribute];
@@ -100,6 +104,10 @@
 
 +(NSArray *)xy_setConstantWith:(CGFloat)constant withAttribute:(NSLayoutAttribute)attribute toSuperViewWith:(UIView *)view relatedBy:(NSLayoutRelation )related{
     xy_autolayoutArr(layoutArr)
+    
+    if ( attribute == NSLayoutAttributeRight||attribute ==NSLayoutAttributeBottom) {
+        constant = -constant;
+    }
     
     NSLayoutConstraint *xy_attribute = [NSLayoutConstraint addToSuperViewWithView:view WithAttribute:attribute andConstant:constant relatedBy:related];
     
@@ -127,6 +135,11 @@
 +(NSArray*)xy_setConstantWith:(CGFloat)constant withAttribute:(NSLayoutAttribute)attribute with:(UIView *)view toOtherView:(UIView *)view2 withAttribute:(NSLayoutAttribute)attribute2{
     xy_autolayoutArrVTV(layoutArr)
    
+    
+    if ( attribute == NSLayoutAttributeRight||attribute ==NSLayoutAttributeBottom) {
+        constant = -constant;
+    }
+    
     NSLayoutConstraint *xy_Att  = [NSLayoutConstraint constraintWithItem:view attribute:attribute relatedBy:(NSLayoutRelationEqual) toItem:view2 attribute:attribute2 multiplier:1.0 constant:constant];
     layoutArr = @[xy_Att];
     return layoutArr;
@@ -134,6 +147,10 @@
 
 +(NSArray*)xy_setConstantWith:(CGFloat)constant withAttribute:(NSLayoutAttribute)attribute with:(UIView *)view toOtherView:(UIView *)view2 withAttribute:(NSLayoutAttribute)attribute2 relatedBy:(NSLayoutRelation )related{
     xy_autolayoutArrVTV(layoutArr)
+   
+    if ( attribute == NSLayoutAttributeRight||attribute ==NSLayoutAttributeBottom) {
+        constant = -constant;
+    }
     
     NSLayoutConstraint *xy_Att  = [NSLayoutConstraint constraintWithItem:view attribute:attribute relatedBy:(related) toItem:view2 attribute:attribute2 multiplier:1.0 constant:constant];
     layoutArr = @[xy_Att];
@@ -144,6 +161,10 @@
 +(NSArray *)xy_setMultiplierWith:(CGFloat)multiplier withAttribute:(NSLayoutAttribute)attribute toSuperViewWith:(UIView *)view{
     xy_autolayoutArr(layoutArr)
     
+    if ( attribute == NSLayoutAttributeRight||attribute ==NSLayoutAttributeBottom) {
+        multiplier = -multiplier;
+    }
+    
     NSLayoutConstraint *xy_multiplier = [NSLayoutConstraint constraintWithItem:view attribute:attribute relatedBy:(NSLayoutRelationEqual) toItem:view.superview attribute:attribute multiplier:multiplier constant:0];
     layoutArr = @[xy_multiplier];
     return layoutArr;
@@ -151,7 +172,9 @@
 
 +(NSArray *)xy_setMultiplierWith:(CGFloat)multiplier withAttribute:(NSLayoutAttribute)attribute toSuperViewWith:(UIView *)view relatedBy:(NSLayoutRelation )related{
     xy_autolayoutArr(layoutArr)
-    
+    if ( attribute == NSLayoutAttributeRight||attribute ==NSLayoutAttributeBottom) {
+        multiplier = -multiplier;
+    }
     NSLayoutConstraint *xy_multiplier = [NSLayoutConstraint constraintWithItem:view attribute:attribute relatedBy:(related) toItem:view.superview attribute:attribute multiplier:multiplier constant:0];
     layoutArr = @[xy_multiplier];
     return layoutArr;
@@ -160,7 +183,9 @@
 #pragma mark - 子类控件等于子类控件长度百分比
 +(NSArray *)xy_setMultiplierWith:(CGFloat)multiplier withAttribute:(NSLayoutAttribute)attribute withView:(UIView *)view toOtherWith:(UIView *)view2 {
     xy_autolayoutArrVTV(layoutArr)
-    
+     if ( attribute == NSLayoutAttributeRight||attribute ==NSLayoutAttributeBottom) {
+        multiplier = -multiplier;
+    }
     NSLayoutConstraint *xy_multiplier = [NSLayoutConstraint constraintWithItem:view attribute:attribute relatedBy:(NSLayoutRelationEqual) toItem:view2 attribute:attribute multiplier:multiplier constant:0];
     layoutArr = @[xy_multiplier];
     
@@ -170,7 +195,9 @@
 
 +(NSArray *)xy_setMultiplierWith:(CGFloat)multiplier withAttribute:(NSLayoutAttribute)attribute withView:(UIView *)view toOtherWith:(UIView *)view2 relatedBy:(NSLayoutRelation )related{
     xy_autolayoutArrVTV(layoutArr)
-    
+    if ( attribute == NSLayoutAttributeRight||attribute ==NSLayoutAttributeBottom) {
+        multiplier = -multiplier;
+    }
     NSLayoutConstraint *xy_multiplier = [NSLayoutConstraint constraintWithItem:view attribute:attribute relatedBy:(related) toItem:view2 attribute:attribute multiplier:multiplier constant:0];
     layoutArr = @[xy_multiplier];
     

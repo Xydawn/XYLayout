@@ -30,7 +30,8 @@
 
 -(void)xy_autoLayoutSetSize:(CGSize)autoSize withSuperView:(UIView *)superView{
  
-    
+  
+  
     /*
     xy_lazyValue 这个宏  代表下列 
      
@@ -116,6 +117,8 @@
 #pragma mark - 距离边距的距离
 -(void)xy_autoConstantToSuperWith:(CGFloat)constant withAttribute:(NSLayoutAttribute)attribute{
     xy_getSuperView(superView)
+   
+    
     [superView addConstraints:[NSLayoutConstraint xy_setConstantWith:constant withAttribute:attribute toSuperViewWith:self]];
 }
 
@@ -164,6 +167,9 @@
 #pragma makr - 确定与子类控件之间的关系
 -(void)xy_autoConstantWith:(CGFloat)constant withAttribute:(NSLayoutAttribute)attribute toOtherView:(UIView *)view2 withAttribute:(NSLayoutAttribute)attribute2{
     xy_getSuperView(superView)
+    
+   
+    
     [superView addConstraints:[NSLayoutConstraint xy_setConstantWith:constant withAttribute:attribute with:self toOtherView:view2 withAttribute:attribute2]];
 }
 
