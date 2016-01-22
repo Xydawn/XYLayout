@@ -19,13 +19,15 @@
         UIView *superView = self.superview;
      */
     
-    xy_getSuperView(superView)
-    [superView addConstraints:[NSLayoutConstraint xy_setSizeWith:autoSize with:self]];
+    
+    
+    
+    [self addConstraints:[NSLayoutConstraint xy_setSizeWith:autoSize with:self]];
 }
 
 -(void)xy_autoLayoutSetSize:(CGSize )autoSize relatedBy:(NSLayoutRelation )related{
-    xy_getSuperView(superView)
-    [superView addConstraints:[NSLayoutConstraint xy_setSizeWith:autoSize with:self relatedBy:related] ];
+
+    [self addConstraints:[NSLayoutConstraint xy_setSizeWith:autoSize with:self relatedBy:related] ];
 }
 
 -(void)xy_autoLayoutSetSize:(CGSize)autoSize withSuperView:(UIView *)superView{
@@ -53,7 +55,9 @@
         
     }
      */
-    xy_lazyValue([superView addConstraints:[NSLayoutConstraint xy_setSizeWith:autoSize with:self]];)
+    
+    
+    xy_SelflazyValue([self addConstraints:[NSLayoutConstraint xy_setSizeWith:autoSize with:self]];)
     
                 
    
@@ -61,9 +65,7 @@
 
 -(void)xy_autoLayoutSetSize:(CGSize)autoSize withSuperView:(UIView *)superView relatedBy:(NSLayoutRelation )related{
     
-    xy_lazyValue([superView addConstraints:[NSLayoutConstraint xy_setSizeWith:autoSize with:self relatedBy:related]];)
-    
-    
+    xy_SelflazyValue([self addConstraints:[NSLayoutConstraint xy_setSizeWith:autoSize with:self relatedBy:related]];)
     
 }
 
@@ -114,6 +116,7 @@
 }
 
 #pragma mark - 充满父类End
+
 #pragma mark - 距离边距的距离
 -(void)xy_autoConstantToSuperWith:(CGFloat)constant withAttribute:(NSLayoutAttribute)attribute{
     xy_getSuperView(superView)
@@ -142,23 +145,25 @@
 
 #pragma mark - 确定宽或长
 -(void)xy_autoWidthOrHeighWith:(CGFloat)constant withAttribute:(NSLayoutAttribute)attribute{
-    xy_getSuperView(superView)
+
  
-    [superView addConstraints:[NSLayoutConstraint  xy_setWidthOrHeighWith:constant withAttribute:attribute with:self]];
+    [self addConstraints:[NSLayoutConstraint  xy_setWidthOrHeighWith:constant withAttribute:attribute with:self]];
 }
 
 -(void)xy_autoWidthOrHeighWith:(CGFloat)constant withAttribute:(NSLayoutAttribute)attribute relatedBy:(NSLayoutRelation )relate{
-    xy_getSuperView(superView)
-    [superView addConstraints:[NSLayoutConstraint  xy_setWidthOrHeighWith:constant withAttribute:attribute with:self relatedBy:relate]];
+
+    [self addConstraints:[NSLayoutConstraint  xy_setWidthOrHeighWith:constant withAttribute:attribute with:self relatedBy:relate]];
 }
 
 -(void)xy_autoWidthOrHeighWith:(CGFloat)constant withAttribute:(NSLayoutAttribute)attribute WithSuperView:(UIView *)superView{
-    xy_lazyValue([superView addConstraints:[NSLayoutConstraint  xy_setWidthOrHeighWith:constant withAttribute:attribute with:self]];)
+    
+    
+    xy_SelflazyValue([self addConstraints:[NSLayoutConstraint  xy_setWidthOrHeighWith:constant withAttribute:attribute with:self]];)
 
 }
 
 -(void)xy_autoWidthOrHeighWith:(CGFloat)constant withAttribute:(NSLayoutAttribute)attribute WithSuperView:(UIView *)superView relatedBy:(NSLayoutRelation )relate{
-    xy_lazyValue([superView addConstraints:[NSLayoutConstraint  xy_setWidthOrHeighWith:constant withAttribute:attribute with:self relatedBy:relate]];)
+    xy_SelflazyValue([self addConstraints:[NSLayoutConstraint  xy_setWidthOrHeighWith:constant withAttribute:attribute with:self relatedBy:relate]];)
     
 }
 #pragma mark - 确定宽或长End
@@ -167,8 +172,6 @@
 #pragma makr - 确定与子类控件之间的关系
 -(void)xy_autoConstantWith:(CGFloat)constant withAttribute:(NSLayoutAttribute)attribute toOtherView:(UIView *)view2 withAttribute:(NSLayoutAttribute)attribute2{
     xy_getSuperView(superView)
-    
-   
     
     [superView addConstraints:[NSLayoutConstraint xy_setConstantWith:constant withAttribute:attribute with:self toOtherView:view2 withAttribute:attribute2]];
 }

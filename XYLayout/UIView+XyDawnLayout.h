@@ -8,23 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XyDawnLayoutHeader.h"
-/*
- 目前没有做重复约束的处理，重复约束会出问题，以后会做这方面的处理
- 
- 以下是一些能用到的参数，或方法名的解释
- 
-relatedBy:(NSLayoutRelation )relate 确定与约束值的关系
- 
- typedef NS_ENUM(NSInteger, NSLayoutRelation) {
- NSLayoutRelationLessThanOrEqual = -1, 小于或等于
- NSLayoutRelationEqual = 0,            等于
- NSLayoutRelationGreaterThanOrEqual = 1,大于或等于
- };
- 
- 
- withSuperView:(UIView *)superView 没有添加到父视图上,传入父视图并添加（不用担心重复添加，已做处理）
- 
- */
+
 
 @interface UIView (XyDawnLayout)
 #pragma mark - 确定大小
