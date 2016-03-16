@@ -70,7 +70,9 @@
 }
 
 #pragma mark - 确定Size大小End
-#pragma mark -确定在父视图中的范围
+
+
+#pragma mark - 确定在父视图中的范围
 //确定范围
 -(void)xy_autoLayoutSetEdgeInsets:(UIEdgeInsets)insets{
     UIView *superView = self.superview;
@@ -140,7 +142,7 @@
     [superView addConstraints:[NSLayoutConstraint xy_setConstantWith:constant withAttribute:attribute toSuperViewWith:self relatedBy:related]];
 }
 
-#pragma mark -距离边距的距离End
+#pragma mark - 距离边距的距离End
 
 
 #pragma mark - 确定宽或长

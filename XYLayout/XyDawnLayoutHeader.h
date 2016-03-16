@@ -7,6 +7,8 @@
 //
 
 
+//2016.3.16 新增根据文字自动适配
+
 
 //2016.1.21  9:40  解决重复约束
 /*
@@ -39,6 +41,8 @@
 #ifndef XyDawnLayoutHeader_h
 #define XyDawnLayoutHeader_h
 
+#import "UILabel+XyLayout.h"
+#import "NSString+XyLayout.h"
 #import "NSLayoutConstraint+XyLayout.h"
 #import "UIView+XyDawnLayout.h"
 #import <objc/runtime.h>
