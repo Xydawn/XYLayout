@@ -46,6 +46,8 @@
 #import "NSLayoutConstraint+XyLayout.h"
 #import "UIView+XyDawnLayout.h"
 #import <objc/runtime.h>
+#import "UIImageView+SetImageSize.h"
+
 
 #define XY(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
