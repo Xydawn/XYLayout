@@ -7,8 +7,30 @@
 //
 
 
+//2016.4.6 增加自定义尺寸图片，已经下载图片
+/*
+ -(void)xy_setImageViewWithSize:(CGSize )size andImageName:(NSString *)name;
+ 
+ -(void)xy_setImageViewWithSize:(CGSize )size andImageData:(NSData *)data;
+ 
+ -(void)xy_setImageViewWithSize:(CGSize )size andImage:(UIImage *)image;
+ 
+ 
+ -(void)xy_setImageViewWithSize:(CGSize )size andURL:(NSURL *)url andplaceholder:(UIImage *)placeholder;
+ 
+ +(UIImage *)xy_getImageViewWithSize:(CGSize )size andImageName:(NSString *)name;
+ 
+ +(UIImage *)xy_getImageViewWithSize:(CGSize )size andImageData:(NSData *)data;
+ 
+ +(UIImage *)xy_getImageViewWithSize:(CGSize )size andImage:(UIImage *)image;
+ 
+ 
+ 例子
+ [cell.imageView xy_setImageViewWithSize:CGSizeMake(45, 45) andURL:[NSURL URLWithString:user.imageURL] andplaceholder:[UIImageView xy_getImageViewWithSize:CGSizeMake(45, 45) andImage:[UIImage imageNamed:@"iconfont-touxiang"]]];
+ */
 //2016.3.16 新增根据文字自动适配
 
+//- (CGSize)xy_stringSizeWithFont:(UIFont *)font Size:(CGSize)size
 
 //2016.1.21  9:40  解决重复约束
 /*

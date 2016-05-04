@@ -46,6 +46,9 @@
     
     [self.view bringSubviewToFront:label];
     [self.view bringSubviewToFront:label2];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
