@@ -11,7 +11,7 @@
 #import "EMSDWebImageManager.h"
 #import "UIImageView+EMWebCache.h"
 #import "UIView+EMWebCacheOperation.h"
-
+#import "XyDawnLayoutHeader.h"
 static char imageURLKey;
 
 @implementation UIImageView (SetImageSize)

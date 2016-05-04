@@ -7,9 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
-
+#import <UIKit/UIKit.h>
 @interface NSString (XyLayout)
 
 - (CGSize)xy_stringSizeWithFont:(UIFont *)font Size:(CGSize)size;
