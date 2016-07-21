@@ -80,7 +80,7 @@
 
 #ifdef DEBUG
 
-#define CHQLog( s, ... ) NSLog( @"<%@:(%d)_%s> %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent],__func__,__LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] );
+#define CHQLog( s, ... ) NSLog( @"<%@:(%d)_%s> %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent],__LINE__,__func__, [NSString stringWithFormat:(s), ##__VA_ARGS__] );
 
 #else
 
